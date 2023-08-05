@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<nav class="flex gap-8 md:gap-16 px-8 py-4">
+  <Icon name="unicorn" />
+
+  <ul class="list-none list-outside flex gap-4 items-center">
+    <li class="hover:underline"><a href="#about">About</a></li>
+    <li class="hover:underline"><a href="#projects">Projects</a></li>
+    <li class="hover:underline"><a href="#experience">Experience</a></li>
+  </ul>
+</nav>
+
+<style>
+  /* Style the Icon */
+  [astro-icon="unicorn"] {
+    height: auto;
+    width: 48px;
+    fill: var(--accent);
+  }
+
+  @media screen and (min-width: 768px) {
+    [astro-icon="unicorn"] {
+      width: 64px;
+    }
+  }
+</style>
