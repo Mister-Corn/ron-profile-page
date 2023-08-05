@@ -22,9 +22,15 @@ const { title, description } = Astro.props;
   </body>
 </html>
 <style is:global>
+  :root {
+    --primary: #13151a;
+    --primary-bg: white;
+    --accent: hotpink;
+  }
+
   html {
     font-family: system-ui, sans-serif;
-    background: #13151a;
-    color: white;
+    background: var(--primary-bg);
+    color: var(--primary);
   }
 </style>
