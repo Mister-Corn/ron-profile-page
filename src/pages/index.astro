@@ -23,13 +23,47 @@ import Nav from "../components/Nav.astro";
       </div>
     </header>
 
-    <section id="about">
-      <div>
+    <section id="about" class="flex flex-col md:flex-row md:justify-around">
+      <div class="w-full md:w-1/2 shrink-0">
         <h2>My strengths</h2>
+
+        <ul class="list-inside list-disc">
+          <li>
+            <strong>5 years</strong> of experience in <strong>React.js</strong>
+          </li>
+
+          <li>
+            Strong understanding of core web technologies: good ol' HTML, CSS, &
+            JS, with <strong>5 years of experience</strong>.
+          </li>
+
+          <li>
+            <strong class="font-italic">Insanely</strong> flexible. Willing to jump
+            into different areas, such as backend and design to get things shipped.
+          </li>
+        </ul>
       </div>
 
-      <div>
+      <div class="w-full md:w-1/2 shrink-0">
         <h2>My Aspirations</h2>
+
+        <ul class="list-disc list-inside">
+          <li>
+            Build the foundations for full-stack by working on backend
+            technologies and setting up deployments.
+          </li>
+
+          <li>
+            Learn and implement 3D rendering tools, such as <a
+              href="https://threejs.org/"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              class="underline">three.js</a
+            >.
+          </li>
+
+          <li>Continue to learn, improve, and grow!</li>
+        </ul>
       </div>
     </section>
 
