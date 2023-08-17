@@ -1,15 +1,17 @@
-FROM node:lts AS runtime
+# This file is only suitable to be used during development, not production.
+# It only sets up and installs the packages. 
+# The source will be mounted as a volume by Docker compose.
+
+FROM node:18-alpine
+
 WORKDIR /app
 
-COPY . .
+COPY package*.json .
+COPY pnpm*.yaml .
 
 RUN corepack enable
 RUN corepack prepare pnpm@latest --activate
 
 RUN pnpm install
-RUN pnpm run build
 
-ENV HOST=0.0.0.0
-ENV PORT=3000
-EXPOSE 3000
-CMD node ./dist/server/entry.mjs
+CMD ["pnpm", "start"]
