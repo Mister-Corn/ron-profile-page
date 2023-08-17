@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
+import ronImg from "../images/me.jpg";
 ---
 
 <Layout
@@ -11,8 +12,14 @@ import Nav from "../components/Nav.astro";
     <Nav />
 
     <!-- Header -->
-    <header id="top" class="flex flex-col md:flex-row w-full">
-      <div class="w-full md:w-1/2 h-[240px] bg-rose-200 shrink-0"></div>
+    <header id="top" class="flex flex-col min-h-[240px] md:flex-row w-full">
+      <div class="w-full md:w-1/2 shrink-0">
+        <img
+          src={ronImg}
+          alt="It's a pleasure to meet you!"
+          class="w-80 h-80"
+        />
+      </div>
 
       <div class="text-center p-8 w-full md:w-1/2 flex-1">
         <h1 class="text-2xl mb-[1em]">Ronald Libago</h1>
