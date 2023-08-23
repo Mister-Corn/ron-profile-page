@@ -31,7 +31,7 @@ import seaImg from "../images/backgrounds/sea.jpg";
         <div
           class="cst-triangle-box-shadow absolute left-1/2 top-1/2 z-10 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 lg:h-[400px] lg:w-[400px]"
         >
-          <div class="cst-triangle cst-border bg-hotPink h-full w-full"></div>
+          <div class="cst-triangle cst-border h-full w-full bg-hotPink"></div>
         </div>
 
         <div
@@ -39,11 +39,11 @@ import seaImg from "../images/backgrounds/sea.jpg";
         >
           <h1 class="mb-[1em]">
             <span
-              class="cst-text-gradient first-name block text-4xl lg:text-5xl"
+              class="cst-text-gradient block font-audiowide text-4xl lg:text-5xl"
               >RONALD</span
             >
             <span
-              class="last-name relative z-10 block pb-6 text-5xl !leading-[0.5] text-pastelGreen lg:text-6xl"
+              class="cst-tilt-text relative z-10 block pb-6 font-pacifico text-5xl !leading-[0.5] text-pastelGreen lg:text-6xl"
               >Libago</span
             >
           </h1>
@@ -178,12 +178,7 @@ import seaImg from "../images/backgrounds/sea.jpg";
     -webkit-text-fill-color: transparent;
   }
 
-  .cst-header-highlight h1 .first-name {
-    font-family: "Audiowide", cursive;
-  }
-
-  .cst-header-highlight h1 .last-name {
+  .cst-tilt-text {
     transform: rotate(-7deg);
-    font-family: "Pacifico", cursive;
   }
 </style>

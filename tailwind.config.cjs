@@ -9,6 +9,10 @@ module.exports = {
         boldPurple: "rgb(var(--clr-bold-purple) / <alpha-value>)",
         hotPink: "rgb(var(--clr-hot-pink) / <alpha-value>)",
       },
+      fontFamily: {
+        audiowide: ["Audiowide", "cursive"],
+        pacifico: ["Pacifico", "cursive"],
+      },
     },
   },
   plugins: [],
