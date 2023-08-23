@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -6,11 +6,11 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   vite: {
-    server:{
+    server: {
       host: "0.0.0.0",
       hmr: { clientPort: 3000 },
-      port: 3000, 
-      watch: { usePolling: true }
-    }
-  }
+      port: 3000,
+      watch: { usePolling: true },
+    },
+  },
 });
