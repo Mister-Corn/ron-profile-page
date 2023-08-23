@@ -4,9 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        summerYellow: "rgb(255 255 105 / <alpha-value>)",
-        pastelGreen: "rgb(105 255 180 / <alpha-value>)",
-        boldPurple: "rgb(151 67 226 / <alpha-value>)",
+        summerYellow: "rgb(var(--clr-summer-yellow) / <alpha-value>)",
+        pastelGreen: "rgb(var(--clr-pastel-green) / <alpha-value>)",
+        boldPurple: "rgb(var(--clr-bold-purple) / <alpha-value>)",
+        hotPink: "rgb(var(--clr-hot-pink) / <alpha-value>)",
       },
     },
   },
