@@ -1,4 +1,5 @@
 ---
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 interface Props {
   title: string;
   description: string;
@@ -16,21 +17,25 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=Audiowide&family=Pacifico&display=swap"
+    />
   </head>
   <body>
     <slot />
+    <style is:global>
+      :root {
+        --primary: #13151a;
+        --primary-bg: white;
+        --accent: hotpink;
+      }
+
+      html {
+        font-family: system-ui, sans-serif;
+        background: var(--primary-bg);
+        color: var(--primary);
+      }
+    </style>
   </body>
 </html>
-<style is:global>
-  :root {
-    --primary: #13151a;
-    --primary-bg: white;
-    --accent: hotpink;
-  }
-
-  html {
-    font-family: system-ui, sans-serif;
-    background: var(--primary-bg);
-    color: var(--primary);
-  }
-</style>
