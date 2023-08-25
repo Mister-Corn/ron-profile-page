@@ -25,7 +25,7 @@ import Header from "../components/Header.astro";
           </div>
 
           <ul
-            class="cst-highlight-strong ml-0 list-outside list-disc space-y-2 py-4 pl-7 pr-4"
+            class="cst-highlight-strong cst-highlight-strong--purple ml-0 list-outside list-disc space-y-2 py-4 pl-7 pr-4"
           >
             <li>
               <strong>5 years</strong> of experience in <strong>React.js</strong
@@ -54,14 +54,16 @@ import Header from "../components/Header.astro";
             </h2>
           </div>
 
-          <ul class="ml-0 list-outside list-disc space-y-2 py-4 pl-7 pr-4">
+          <ul
+            class="cst-highlight-strong cst-highlight-strong--yellow ml-0 list-outside list-disc space-y-2 py-4 pl-7 pr-4"
+          >
             <li>
-              Build the foundations for full-stack by working on backend
-              technologies and setting up deployments.
+              Build the foundations for <strong>full-stack</strong> by working
+              on backend technologies and setting up deployments.
             </li>
 
             <li>
-              Learn and implement 3D rendering tools, such as <a
+              Learn and implement <strong>3D rendering tools</strong>, such as <a
                 href="https://threejs.org/"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
@@ -69,9 +71,9 @@ import Header from "../components/Header.astro";
               >.
             </li>
 
-            <li>Continue to learn, improve, and grow!</li>
+            <li>Continue to <strong>learn, improve, and grow</strong>!</li>
 
-            <li>Kick imposter syndrome in the 🍑.</li>
+            <li>Kick imposter syndrome in the <strong>🍑</strong>.</li>
           </ul>
         </div>
       </div>
@@ -114,12 +116,20 @@ import Header from "../components/Header.astro";
 
   .cst-highlight-strong strong {
     display: inline-block;
-    background-color: rgb(var(--clr-bold-purple));
-    color: rgb(var(--clr-summer-yellow));
     padding: 1px 6px 7px;
     text-decoration: underline;
     text-decoration-color: rgb(var(--clr-pastel-green));
     text-decoration-thickness: 4px;
     text-underline-offset: 4px;
+  }
+
+  .cst-highlight-strong--purple strong {
+    background-color: rgb(var(--clr-bold-purple));
+    color: rgb(var(--clr-summer-yellow));
+  }
+
+  .cst-highlight-strong--yellow strong {
+    background-color: rgb(var(--clr-summer-yellow));
+    color: rgb(var(--clr-bold-purple));
   }
 </style>
