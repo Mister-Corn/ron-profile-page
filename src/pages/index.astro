@@ -2,6 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Header from "../components/Header.astro";
+import cassetteSvg from "../images/decorative/cassette.svg";
+import computerSvg from "../images/decorative/computer.svg";
+import lightningSvg from "../images/decorative/lightning.svg";
 ---
 
 <Layout
@@ -13,11 +16,28 @@ import Header from "../components/Header.astro";
     <Header />
 
     <!-- About Section -->
-    <section id="about" class="cst-bg-grid bg-stone-100">
+    <section
+      id="about"
+      class="cst-bg-grid relative overflow-hidden bg-stone-100"
+    >
+      <img
+        src={cassetteSvg}
+        class="absolute -left-32 -top-48 z-10 h-[540px] w-[540px]"
+      />
+      <img
+        src={lightningSvg}
+        class="absolute left-1/2 z-10 h-[640px] w-[640px] -translate-x-1/2 lg:-top-1/4"
+      />
+      <img
+        src={computerSvg}
+        class="absolute -bottom-48 -right-40 z-10 h-[640px] w-[640px]"
+      />
       <div
         class="container mx-auto flex w-full flex-col gap-8 p-12 md:flex-row md:justify-around"
       >
-        <div class="cst-list-border w-full shrink-0 bg-white md:w-1/2">
+        <div
+          class="cst-list-border relative z-20 w-full shrink-0 bg-white md:w-1/2"
+        >
           <div class="w-full bg-boldPurple p-3">
             <h2 class="font-audiowide text-2xl text-pastelGreen">
               My Strengths 💪
@@ -47,7 +67,9 @@ import Header from "../components/Header.astro";
           </ul>
         </div>
 
-        <div class="cst-list-border w-full shrink-0 bg-white md:w-1/2">
+        <div
+          class="cst-list-border relative z-20 w-full shrink-0 bg-white md:w-1/2"
+        >
           <div class="w-full bg-pastelGreen p-3">
             <h2 class="font-audiowide text-2xl text-boldPurple">
               My Aspirations 🤩
@@ -78,27 +100,27 @@ import Header from "../components/Header.astro";
         </div>
       </div>
     </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-      <h2>Work Experience</h2>
-
-      <ol>
-        <li>H.E.A.L. Global Event, LLC</li>
-        <li>SoFi</li>
-      </ol>
-
-      <h2>Teaching Experience</h2>
-
-      <ol>
-        <li>America On Tech</li>
-        <li>Bloom Institute of Technology</li>
-      </ol>
-    </section>
-
-    <!-- Footer -->
-    <footer></footer>
   </main>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Work Experience</h2>
+
+    <ol>
+      <li>H.E.A.L. Global Event, LLC</li>
+      <li>SoFi</li>
+    </ol>
+
+    <h2>Teaching Experience</h2>
+
+    <ol>
+      <li>America On Tech</li>
+      <li>Bloom Institute of Technology</li>
+    </ol>
+  </section>
+
+  <!-- Footer -->
+  <footer></footer>
 </Layout>
 
 <style>
