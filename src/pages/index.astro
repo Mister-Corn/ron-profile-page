@@ -2,9 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Header from "../components/Header.astro";
-import cassetteSvg from "../images/decorative/cassette.svg";
-import computerSvg from "../images/decorative/computer.svg";
-import lightningSvg from "../images/decorative/lightning.svg";
+import SectionAbout from "../components/SectionAbout.astro";
 ---
 
 <Layout
@@ -14,92 +12,7 @@ import lightningSvg from "../images/decorative/lightning.svg";
   <main>
     <Nav />
     <Header />
-
-    <!-- About Section -->
-    <section
-      id="about"
-      class="cst-bg-grid relative overflow-hidden bg-stone-100"
-    >
-      <img
-        src={cassetteSvg}
-        class="absolute -left-28 -top-40 z-10 h-[480px] w-[480px]"
-      />
-      <img
-        src={lightningSvg}
-        class="absolute left-1/2 z-10 h-[540px] w-[540px] -translate-x-1/2 lg:-top-1/4"
-      />
-      <img
-        src={computerSvg}
-        class="absolute -bottom-48 -right-40 z-10 h-[540px] w-[540px]"
-      />
-      <div
-        class="container mx-auto flex w-full flex-col gap-8 p-12 md:flex-row md:justify-around"
-      >
-        <div
-          class="cst-list-border relative z-20 w-full shrink-0 bg-white md:w-1/2"
-        >
-          <div class="w-full bg-boldPurple p-3">
-            <h2 class="font-audiowide text-2xl text-pastelGreen">
-              My Strengths 💪
-            </h2>
-          </div>
-
-          <ul
-            class="cst-highlight-strong cst-highlight-strong--purple ml-0 list-outside list-disc space-y-2 py-4 pl-7 pr-4"
-          >
-            <li>
-              <strong>5 years</strong> of experience in <strong>React.js</strong
-              >
-            </li>
-
-            <li>
-              Strong understanding of <strong>core web technologies</strong>:
-              good ol' HTML, CSS, & JS, with <strong
-                >5 years of experience</strong
-              >.
-            </li>
-
-            <li>
-              <strong class="font-italic">Insanely flexible</strong>. Willing to
-              jump into different areas, such as backend and design to get
-              things shipped.
-            </li>
-          </ul>
-        </div>
-
-        <div
-          class="cst-list-border relative z-20 w-full shrink-0 bg-white md:w-1/2"
-        >
-          <div class="w-full bg-pastelGreen p-3">
-            <h2 class="font-audiowide text-2xl text-boldPurple">
-              My Aspirations 🤩
-            </h2>
-          </div>
-
-          <ul
-            class="cst-highlight-strong cst-highlight-strong--yellow ml-0 list-outside list-disc space-y-2 py-4 pl-7 pr-4"
-          >
-            <li>
-              Build the foundations for <strong>full-stack</strong> by working
-              on backend technologies and setting up deployments.
-            </li>
-
-            <li>
-              Learn and implement <strong>3D rendering tools</strong>, such as <a
-                href="https://threejs.org/"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                class="underline">three.js</a
-              >.
-            </li>
-
-            <li>Continue to <strong>learn, improve, and grow</strong>!</li>
-
-            <li>Kick imposter syndrome in the <strong>🍑</strong>.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <SectionAbout />
   </main>
 
   <!-- Experience Section -->
@@ -122,36 +35,3 @@ import lightningSvg from "../images/decorative/lightning.svg";
   <!-- Footer -->
   <footer></footer>
 </Layout>
-
-<style>
-  .cst-bg-grid {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 40px 40px; /* Adjust the grid size as needed */
-  }
-
-  .cst-list-border {
-    border: 8px solid;
-    border-color: darkorchid orchid;
-    outline: 8px ridge lightpink;
-  }
-
-  .cst-highlight-strong strong {
-    display: inline-block;
-    padding: 1px 6px 7px;
-    text-decoration: underline;
-    text-decoration-color: rgb(var(--clr-pastel-green));
-    text-decoration-thickness: 4px;
-    text-underline-offset: 4px;
-  }
-
-  .cst-highlight-strong--purple strong {
-    background-color: rgb(var(--clr-bold-purple));
-    color: rgb(var(--clr-summer-yellow));
-  }
-
-  .cst-highlight-strong--yellow strong {
-    background-color: rgb(var(--clr-summer-yellow));
-    color: rgb(var(--clr-bold-purple));
-  }
-</style>
