@@ -17,21 +17,86 @@ import SectionAbout from "../components/SectionAbout.astro";
 
   <!-- Experience Section -->
   <section id="experience">
-    <h2>Work Experience</h2>
+    <div class="container mx-auto p-12">
+      <h2 class="font-audiowide text-2xl">Work Experience</h2>
 
-    <ol>
-      <li>H.E.A.L. Global Event, LLC</li>
-      <li>SoFi</li>
-    </ol>
+      <ol class="space-y-6">
+        <li>
+          <h3 class="mb-2 text-lg font-medium">Developer, Full-Stack</h3>
 
-    <h2>Teaching Experience</h2>
+          <p class="text-sm text-gray-600">
+            H.E.A.L. Global Event, LLC - Los Angeles, CA
+          </p>
+          <p class="mb-2 text-sm text-gray-600">September 2021 - Present</p>
 
-    <ol>
-      <li>America On Tech</li>
-      <li>Bloom Institute of Technology</li>
-    </ol>
+          <ul class="list-inside list-disc">
+            <li>
+              Designed the website: page design, layout, responsiveness, etc.
+            </li>
+            <li>
+              Developed the website from the ground up using code and web
+              development tools (NextJS, Tailwind CSS).
+            </li>
+            <li>
+              Architected and implemented a membership service flow: design
+              (UI/UX), database and api, user sign-up and sign-in, and
+              integration with third-party services (Supabase, Stripe,
+              SendGrid).
+            </li>
+            <li>
+              Set up and maintained SQL database using PlanetScale (MySQL) and
+              Prisma.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h3 class="mb-2 text-lg font-medium">Software Engineer, Front-end</h3>
+
+          <p class="text-sm text-gray-600">SoFi - San Francisco, CA</p>
+          <p class="mb-2 text-sm text-gray-600">May 2019 - July 2021</p>
+
+          <ul class="list-inside list-disc">
+            <li>
+              Designed the UI for a customer service teams app, and developed
+              the app from scratch with TypeScript/React.
+            </li>
+            <li>
+              Built an API, in Java/Spring, around existing back-end
+              functionality to enable the customer service UI.
+            </li>
+            <li>
+              Developed the Zendesk theme for the company, and created a
+              deployment pipeline which synced the code base to Zendesk through
+              an API.
+            </li>
+            <li>
+              Coded functionality for web developers across the company to
+              easily use third-party partner code in their websites.
+            </li>
+            <li>
+              Set up and managed experimentation around SoFi Bankings’s referral
+              marketing page.
+            </li>
+            <li>
+              Developed an interactive credit score graph for SoFi Relay’s
+              Credit Score Monitoring feature.
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2 class="font-audiowide text-2xl">Teaching Experience</h2>
+
+      <ol>
+        <li>America On Tech</li>
+        <li>Bloom Institute of Technology</li>
+      </ol>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer></footer>
 </Layout>
+
+<style></style>
