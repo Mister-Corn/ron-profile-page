@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Header from "../components/Header.astro";
 import SectionAbout from "../components/SectionAbout.astro";
+import memphisBg from "../images/backgrounds/memphisA.jpg";
 ---
 
 <Layout
@@ -15,12 +16,20 @@ import SectionAbout from "../components/SectionAbout.astro";
     <SectionAbout />
     <!-- Experience Section -->
     <section id="experience">
-      <div class="container mx-auto p-12">
-        <div>
-          <h2 class="font-audiowide text-2xl">Work Experience</h2>
+      <div class="container mx-auto grid gap-8 p-12">
+        <div class="rounded bg-lime-50 p-6">
+          <h2
+            class="mb-4 inline-block rounded-sm bg-hotPink p-2 font-audiowide text-2xl text-summerYellow underline decoration-cyan-200 decoration-4"
+          >
+            Work Experience
+          </h2>
           <ol class="space-y-6">
             <li>
-              <h3 class="mb-2 text-lg font-medium">Developer, Full-Stack</h3>
+              <h3
+                class="mb-1 text-lg font-medium underline decoration-cyan-200 decoration-4"
+              >
+                Developer, Full-Stack
+              </h3>
               <p class="text-sm text-gray-600">
                 H.E.A.L. Global Event, LLC - Los Angeles, CA
               </p>
@@ -68,7 +77,9 @@ import SectionAbout from "../components/SectionAbout.astro";
               </ul>
             </li>
             <li>
-              <h3 class="mb-2 text-lg font-medium">
+              <h3
+                class="mb-1 text-lg font-medium underline decoration-cyan-200 decoration-4"
+              >
                 Software Engineer, Front-end
               </h3>
               <p class="text-sm text-gray-600">SoFi - San Francisco, CA</p>
@@ -115,11 +126,18 @@ import SectionAbout from "../components/SectionAbout.astro";
           </ol>
         </div>
 
-        <div>
-          <h2 class="font-audiowide text-2xl">Teaching Experience</h2>
-          <ol>
+        <div class="rounded bg-cyan-50 p-6">
+          <h2
+            class="mb-4 inline-block rounded-sm bg-hotPink p-2 font-audiowide text-2xl text-summerYellow underline decoration-lime-200 decoration-4"
+          >
+            Teaching Experience
+          </h2>
+
+          <ol class="space-y-6">
             <li>
-              <h3 class="mb-2 text-lg font-medium">
+              <h3
+                class="mb-1 text-lg font-medium underline decoration-lime-200 decoration-4"
+              >
                 Instructor, Web Development
               </h3>
               <p class="text-sm text-gray-600">
@@ -152,7 +170,9 @@ import SectionAbout from "../components/SectionAbout.astro";
               </ul>
             </li>
             <li>
-              <h3 class="mb-2 text-lg font-medium">
+              <h3
+                class="mb-1 text-lg font-medium underline decoration-lime-200 decoration-4"
+              >
                 Teaching Assistant - Computer Science & Full Stack Web
               </h3>
               <p class="text-sm text-gray-600">
@@ -202,4 +222,9 @@ import SectionAbout from "../components/SectionAbout.astro";
   <footer></footer>
 </Layout>
 
-<style></style>
+<style>
+  #experience {
+    background-image: url("/images/backgrounds/memphisA.jpg");
+    background-repeat: repeat;
+  }
+</style>
