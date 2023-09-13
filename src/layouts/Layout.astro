@@ -25,18 +25,20 @@ const { title, description } = Astro.props;
     />
 
     <script>
-      import { createIcons, Linkedin } from "lucide";
+      import { createIcons, Linkedin, Mail } from "lucide";
 
       window.onload = () => {
         // Setup Lucide Icons
         createIcons({
           icons: {
             Linkedin,
+            Mail,
           },
         });
       };
     </script>
   </head>
+
   <body>
     <slot />
     <style is:global>
