@@ -1,5 +1,7 @@
 ---
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+
+// Props for Layout component
 interface Props {
   title: string;
   description: string;
@@ -21,6 +23,19 @@ const { title, description } = Astro.props;
     <GoogleFontsOptimizer
       url="https://fonts.googleapis.com/css2?family=Audiowide&family=Pacifico&display=swap"
     />
+
+    <script>
+      import { createIcons, Linkedin } from "lucide";
+
+      window.onload = () => {
+        // Setup Lucide Icons
+        createIcons({
+          icons: {
+            Linkedin,
+          },
+        });
+      };
+    </script>
   </head>
   <body>
     <slot />
