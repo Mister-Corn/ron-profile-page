@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Header from "../components/Header.astro";
 import SectionAbout from "../components/SectionAbout.astro";
-import memphisBg from "../images/backgrounds/memphisA.jpg";
 ---
 
 <Layout
@@ -219,7 +218,36 @@ import memphisBg from "../images/backgrounds/memphisA.jpg";
   </main>
 
   <!-- Footer -->
-  <footer></footer>
+  <footer class="bg-boldPurple text-white">
+    <div class="container mx-auto grid grid-cols-2 gap-8 p-12">
+      <div>
+        <h2 class="mb-1 font-bold">Connect with me</h2>
+        <ul class="flex items-center gap-3">
+          <li>
+            <a href="https://www.linkedin.com/in/ronald-libago/">
+              <i data-lucide="linkedin" aria-label="LinkedIn"></i>
+            </a>
+          </li>
+
+          <li>
+            <i data-lucide="mail"></i>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="mb-1 font-bold">Credit & Thank you&apos;s</h2>
+
+         Memphis Pattern Background Image (<em>in the Experience section</em>)
+        by <a
+          href="https://www.freepik.com/free-vector/memphis-pattern-collection_9158956.htm"
+          target="_blank"
+          rel="noopener nofollow"
+          class="underline">Freepik</a
+        >
+      </div>
+    </div>
+  </footer>
 </Layout>
 
 <style>
