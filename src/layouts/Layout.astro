@@ -1,5 +1,6 @@
 ---
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import "@/globals.css";
 
 // Props for Layout component
 interface Props {
@@ -41,29 +42,5 @@ const { title, description } = Astro.props;
 
   <body>
     <slot />
-    <style is:global>
-      :root {
-        --primary: #271f27;
-        --primary-bg: white;
-        --accent: hotpink;
-
-        /**
-         * Additional Colors (in RGB).
-         *
-         * Note: these color variables are referenced in "tailwind.config.cjs".
-         * Update any changes accordingly.
-         */
-        --clr-summer-yellow: 255 255 105;
-        --clr-pastel-green: 105 255 180;
-        --clr-bold-purple: 151 67 226;
-        --clr-hot-pink: 255 105 180;
-      }
-
-      html {
-        font-family: system-ui, sans-serif;
-        background: var(--primary-bg);
-        color: var(--primary);
-      }
-    </style>
   </body>
 </html>
