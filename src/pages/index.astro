@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Header from "../components/Header.astro";
 import SectionAbout from "../components/SectionAbout.astro";
+import { ContactMeDialog } from "@/components/ContactMeDialog";
 ---
 
 <Layout
@@ -245,7 +246,7 @@ import SectionAbout from "../components/SectionAbout.astro";
           </li>
 
           <li>
-            <i data-lucide="mail"></i>
+            <ContactMeDialog client:idle />
           </li>
         </ul>
       </div>
