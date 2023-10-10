@@ -21,6 +21,7 @@ module.exports = {
         pastelGreen: "rgb(var(--clr-pastel-green) / <alpha-value>)",
         boldPurple: "rgb(var(--clr-bold-purple) / <alpha-value>)",
         hotPink: "rgb(var(--clr-hot-pink) / <alpha-value>)",
+        windowsBlue: "rgb(var(--clr-windows-blue) / <alpha-value>)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
