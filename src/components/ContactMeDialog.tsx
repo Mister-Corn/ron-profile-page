@@ -30,6 +30,10 @@ const contactFormDataSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormDataSchema>;
 
 export function ContactMeDialog() {
+  const [sendingStatus, setSendingStatus] = React.useState<
+    "idle" | "sending" | "sent" | "errored"
+  >("idle");
+
   const {
     register,
     handleSubmit,
@@ -42,7 +46,39 @@ export function ContactMeDialog() {
   const messageLength = watch("message")?.length ?? 0;
   const isMessageLengthOver = messageLength > CONTACT_MESSAGE_MAX_LENGTH;
 
-  const onSubmit: SubmitHandler<ContactFormData> = console.log;
+  const onSubmit: SubmitHandler<ContactFormData> = async ({
+    email: replyEmail,
+    name,
+    message,
+  }) => {
+    setSendingStatus("sending");
+
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          replyEmail,
+          name,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`${response.status}: ${response.statusText}`);
+      }
+
+      setSendingStatus("sent");
+    } catch (error) {
+      if (process.env.NODE_ENV === "development") {
+        console.error(error);
+      }
+
+      setSendingStatus("errored");
+    }
+  };
 
   return (
     <Dialog>
@@ -53,11 +89,11 @@ export function ContactMeDialog() {
         <DialogOverlay />
         <DialogContent
           className={cn(
-            "border-windowsBlue fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border-2 bg-background bg-white shadow duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:max-w-[640px] md:w-full",
+            "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border-2 border-windowsBlue bg-background bg-white shadow duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:max-w-[640px] md:w-full",
           )}
         >
           <div className="flex flex-row">
-            <div className="bg-windowsBlue w-full px-6 py-1 text-center font-bold text-white">
+            <div className="w-full bg-windowsBlue px-6 py-1 text-center font-bold text-white">
               Contact me
             </div>
 
@@ -146,12 +182,33 @@ export function ContactMeDialog() {
               </div>
             </div>
 
-            <button
-              type="submit"
-              className="block w-min border-[3px] border-b-gray-500 border-l-gray-100 border-r-gray-500 border-t-gray-100 bg-gray-300 px-4 py-1"
-            >
-              Contact
-            </button>
+            <div className="flex flex-row gap-4">
+              <button
+                type="submit"
+                className="block w-min border-[3px] border-b-gray-500 border-l-gray-100 border-r-gray-500 border-t-gray-100 bg-gray-300 px-4 py-1"
+              >
+                Contact
+              </button>
+
+              <div className="flex items-center">
+                {(function (sendingStatus) {
+                  switch (sendingStatus) {
+                    case "sending": {
+                      return "📨 Sending";
+                    }
+                    case "sent": {
+                      return "✅ Sent! Thank you for your message.";
+                    }
+                    case "errored": {
+                      return "😞 Couldn't send your message. Please try again!";
+                    }
+                    default: {
+                      return null;
+                    }
+                  }
+                })(sendingStatus)}
+              </div>
+            </div>
           </form>
         </DialogContent>
       </DialogPortal>
