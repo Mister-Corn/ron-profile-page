@@ -5,8 +5,8 @@ import { z } from "zod";
 const resend = new Resend(process.env.EMAIL_RESEND_API_KEY);
 
 export const emailBodySchema = z.object({
-  from: z.string().email(),
-  subject: z.string(),
+  replyEmail: z.string().email(),
+  name: z.string(),
   message: z.string(),
 });
 
@@ -28,12 +28,12 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { subject, message, from } = parsedBody.data;
+    const { name, message, replyEmail } = parsedBody.data;
 
     await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
       to: [contactEmail],
-      subject,
+      subject: `New message from ${name}`,
       html: `
         <html>
           <head>
@@ -47,7 +47,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
             </style>
           </head>
           <body>
-            <p>From: ${from}</p>
+            <p>From: ${replyEmail}</p>
             <p>${message}</p>
           </body>
         </html>
