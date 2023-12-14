@@ -1,8 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.EMAIL_RESEND_API_KEY);
 
 export const emailBodySchema = z.object({
   from: z.string().email(),
@@ -12,7 +12,7 @@ export const emailBodySchema = z.object({
 
 export type EmailBody = z.infer<typeof emailBodySchema>;
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function (req: VercelRequest, res: VercelResponse) {
   const { body } = req;
 
   const parsedBody = emailBodySchema.safeParse(body);
@@ -58,4 +58,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (error) {
     res.status(400).json(error);
   }
-};
+}
