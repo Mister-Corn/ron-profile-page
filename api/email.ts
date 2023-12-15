@@ -54,8 +54,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       `,
     });
 
-    res.status(201);
+    return res.status(201);
   } catch (error) {
-    res.status(400).json(error);
+    return res.status(400).json(error);
   }
 }
