@@ -1,0 +1,131 @@
+---
+import cassetteSvg from "../images/decorative/cassette.svg";
+import computerSvg from "../images/decorative/computer.svg";
+import lightningSvg from "../images/decorative/lightning.svg";
+---
+
+<section id="about" class="cst-bg-grid relative overflow-hidden bg-stone-100">
+  <!-- Background Images -->
+  <img
+    src={cassetteSvg.src}
+    class="absolute -left-28 -top-40 z-10 h-[480px] w-[480px]"
+  />
+  <img
+    src={lightningSvg.src}
+    class="absolute left-1/2 z-10 h-[540px] w-[540px] -translate-x-1/2 translate-y-1/4 lg:-top-1/4"
+  />
+  <img
+    src={computerSvg.src}
+    class="absolute -bottom-48 -right-40 z-10 h-[540px] w-[540px]"
+  />
+
+  <!-- Content -->
+  <div
+    class="container mx-auto flex w-full flex-col gap-8 p-12 lg:flex-row lg:justify-center"
+  >
+    <div
+      class="cst-list-border relative z-20 w-full shrink-0 bg-white lg:basis-1/2"
+    >
+      <div class="w-full bg-boldPurple p-3">
+        <h2 class="font-audiowide text-2xl text-pastelGreen">
+          My Strengths 💪
+        </h2>
+      </div>
+
+      <ul
+        class="cst-highlight-strong cst-highlight-strong--purple ml-0 list-outside space-y-2 py-4 pl-7 pr-4"
+      >
+        <li>
+          <strong>Like, 5 Years of React.js Awesomeness.</strong> I've been
+          rocking React.js for 5 years straight, making those websites pop like
+          totally rad neon colors!
+        </li>
+        <li>
+          <strong>Core Web Tech Guru.</strong> I've got the 411 on HTML, CSS,
+          and JS, and I've been crushing it for, like, 5 years. I'm totally in
+          my element with these web goodies!
+        </li>
+        <li>
+          <strong>Super Flexible, Ready to Rock Any Area.</strong> I'm, like,
+          insanely flexible, you know? I'll totally jump into different zones,
+          like UI design and backend, to make things happen and ship it, no
+          sweat! 😄👍
+        </li>
+        <li>
+          <strong>Always Learning, Always Groovin'.</strong> I'm, like, totally
+          committed to learning, improving, and growing, because life's all
+          about riding the wave and staying groovy, ya know?
+        </li>
+      </ul>
+    </div>
+
+    <div
+      class="cst-list-border relative z-20 w-full shrink-0 bg-white lg:basis-1/2"
+    >
+      <div class="w-full bg-pastelGreen p-3">
+        <h2 class="font-audiowide text-2xl text-boldPurple">
+          My Aspirations 🤩
+        </h2>
+      </div>
+
+      <ul
+        class="cst-highlight-strong cst-highlight-strong--yellow ml-0 list-outside space-y-2 py-4 pl-7 pr-4"
+      >
+        <li>
+          <strong>Laying the Full-Stack Foundation.</strong> I'm all about
+          building the rad foundations for full-stack action by diving into
+          backend tech and making deployments happen.
+        </li>
+
+        <li>
+          <strong>3D Rendering Magic with three.js.</strong> I'm on a journey to
+          learn and rock those 3D rendering tools like{" "}<a
+            href="https://threejs.org/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            class="underline">three.js</a
+          >. Gonna make those visuals pop!
+        </li>
+
+        <li>
+          <strong>Kicking Imposter Syndrome to the Curb.</strong> OMG, imposter
+          syndrome? I'm showing it the exit, 'cause I'm a total boss and I know
+          it! 😎🤘
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    .cst-bg-grid {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px; /* Adjust the grid size as needed */
+    }
+
+    .cst-list-border {
+      border: 8px solid;
+      border-color: darkorchid orchid;
+      outline: 8px ridge lightpink;
+    }
+
+    .cst-highlight-strong strong {
+      display: inline-block;
+      padding: 1px 6px 7px;
+      text-decoration: underline;
+      text-decoration-color: rgb(var(--clr-pastel-green));
+      text-decoration-thickness: 4px;
+      text-underline-offset: 4px;
+    }
+
+    .cst-highlight-strong--purple strong {
+      background-color: rgb(var(--clr-bold-purple));
+      color: rgb(var(--clr-summer-yellow));
+    }
+
+    .cst-highlight-strong--yellow strong {
+      background-color: rgb(var(--clr-summer-yellow));
+      color: rgb(var(--clr-bold-purple));
+    }
+  </style>
+</section>

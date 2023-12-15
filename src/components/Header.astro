@@ -1,0 +1,96 @@
+---
+import ronImg from "../images/me.jpg";
+---
+
+<header
+  id="top"
+  class="relative flex min-h-[480px] w-full flex-col items-center justify-center gap-20 overflow-hidden p-12 lg:flex-row lg:gap-12"
+>
+  <div class="relative z-20 flex shrink-0 items-center justify-center">
+    <img
+      src={ronImg.src}
+      alt="I'm Ronald. It's a pleasure to meet you!"
+      class="cst-border h-56 w-56 md:h-72 md:w-72"
+    />
+  </div>
+
+  <div class="relative lg:w-1/3">
+    <div
+      class="cst-triangle-box-shadow absolute left-1/2 top-1/2 z-10 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 lg:h-[400px] lg:w-[400px]"
+    >
+      <div class="cst-triangle cst-border h-full w-full bg-hotPink"></div>
+    </div>
+
+    <div
+      class="cst-header-highlight relative z-20 block bg-boldPurple p-8 text-center text-white opacity-90"
+    >
+      <h1 class="mb-[1em]">
+        <span
+          class="cst-text-gradient block font-audiowide text-4xl lg:text-5xl"
+          >RONALD</span
+        >
+        <span
+          class="cst-tilt-text relative z-10 block pb-6 font-pacifico text-5xl !leading-[0.5] text-pastelGreen lg:text-6xl"
+          >Libago</span
+        >
+      </h1>
+
+      <p>
+        I am a front-end focused web engineer! My strengths are in <strong
+          class="text-pastelGreen">React</strong
+        >, <strong class="text-pastelGreen">TypeScript</strong>, and <strong
+          class="text-pastelGreen">core web technologies</strong
+        > (<strong class="cst-text-gradient">HTML</strong>, <strong
+          class="cst-text-gradient">CSS</strong
+        >, & <strong class="cst-text-gradient">JavaScript</strong>).
+      </p>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    background: linear-gradient(
+      0deg,
+      rgb(var(--clr-summer-yellow) / 50%) 0%,
+      rgb(var(--clr-hot-pink) / 50%) 48%
+    );
+  }
+
+  .cst-border {
+    box-shadow: 16px 16px rgb(var(--clr-pastel-green) / 0.55);
+  }
+
+  .cst-triangle-box-shadow {
+    /**
+       * @see {@link https://css-tricks.com/using-box-shadows-and-clip-path-together/}
+       */
+    filter: drop-shadow(0 32px rgb(var(--clr-pastel-green) / 0.5));
+  }
+
+  .cst-triangle {
+    /**
+       * Triangle clip path generated with Clip Path Generator
+       * @see {@link https://www.cssportal.com/css-clip-path-generator/}
+       */
+    -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+  }
+
+  .cst-text-gradient {
+    /**
+        * CSS Text Gradient
+        * Reference: httpts://cssgradient.io/blog/css-gradient-text/
+        */
+    background: linear-gradient(
+      rgb(var(--clr-summer-yellow)),
+      rgb(var(--clr-hot-pink))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cst-tilt-text {
+    transform: rotate(-7deg);
+  }
+</style>

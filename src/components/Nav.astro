@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<nav class="flex gap-8 px-8 py-4 md:gap-16">
+  <a href="#top"
+    ><Icon name="unicorn" alt="Ronald's Profile Page" /><span class="sr-only"
+      >Go to top of page</span
+    ></a
+  >
+
+  <ul class="flex list-outside list-none items-center gap-4">
+    <li class="hover:underline"><a href="#about">About</a></li>
+    <li class="hover:underline"><a href="#experience">Experience</a></li>
+  </ul>
+</nav>
+
+<style>
+  /* Style the Icon */
+  [astro-icon="unicorn"] {
+    height: auto;
+    width: 48px;
+    fill: hotpink;
+  }
+
+  @media screen and (min-width: 768px) {
+    [astro-icon="unicorn"] {
+      width: 64px;
+    }
+  }
+</style>

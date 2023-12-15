@@ -1,39 +1,64 @@
---- 
+---
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import ronImg from "@/images/me.jpg";
+import "@/globals.css";
+
+// Props for Layout component
 interface Props {
-	title: string;
+  title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Frontend, Web Developer, Engineer, React, TypeScript, Web Technologies, Node.JS, Full-Stack"
+    />
+    <meta name="author" content="Ronald Libago" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <!-- Add Open Graph tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ronImg.src} />
+    <meta property="og:url" content="https://ronaldlibago.dev" />
+
+    <!-- Add Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ronImg.src} />
+
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=Audiowide&family=Pacifico&display=swap"
+    />
+
+    <script>
+      import { createIcons, Linkedin, Mail } from "lucide";
+
+      window.onload = () => {
+        // Setup Lucide Icons
+        createIcons({
+          icons: {
+            Linkedin,
+            Mail,
+          },
+        });
+      };
+    </script>
+  </head>
+
+  <body>
+    <slot />
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151A;
-		background-size: 224px;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
