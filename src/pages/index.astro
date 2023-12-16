@@ -4,6 +4,7 @@ import Nav from "../components/Nav.astro";
 import Header from "../components/Header.astro";
 import SectionAbout from "../components/SectionAbout.astro";
 import { ContactMeDialog } from "@/components/ContactMeDialog";
+import { externalLinks } from "@/links";
 ---
 
 <Layout
@@ -240,7 +241,7 @@ import { ContactMeDialog } from "@/components/ContactMeDialog";
         <h2 class="mb-1 font-bold">Connect with me</h2>
         <ul class="flex items-center gap-3">
           <li>
-            <a href="https://www.linkedin.com/in/ronald-libago/">
+            <a href={externalLinks.linkedin}>
               <i data-lucide="linkedin" aria-label="LinkedIn"></i>
             </a>
           </li>

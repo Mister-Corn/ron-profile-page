@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon";
+import { ContactMeDialog } from "@/components/ContactMeDialog";
+import { externalLinks } from "@/links";
 ---
 
 <nav class="container flex gap-8 px-8 py-4 md:gap-16">
@@ -9,10 +11,24 @@ import { Icon } from "astro-icon";
     ></a
   >
 
-  <ul class="flex list-outside list-none items-center gap-4">
-    <li class="hover:underline"><a href="#about">About</a></li>
-    <li class="hover:underline"><a href="#experience">Experience</a></li>
-  </ul>
+  <div class="flex w-full justify-between">
+    <ul class="flex list-outside list-none items-center gap-4">
+      <li class="hover:underline"><a href="#about">About</a></li>
+      <li class="hover:underline"><a href="#experience">Experience</a></li>
+    </ul>
+
+    <ul class="flex list-none items-center gap-3">
+      <li>
+        <a href={externalLinks.linkedin}>
+          <i data-lucide="linkedin" aria-label="LinkedIn"></i>
+        </a>
+      </li>
+
+      <li>
+        <ContactMeDialog client:idle />
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <style>
