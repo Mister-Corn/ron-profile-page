@@ -12,23 +12,25 @@ import { externalLinks } from "@/links";
   >
 
   <div class="flex w-full justify-between">
-    <ul class="flex list-outside list-none items-center gap-4">
+    <ul
+      class="invisible flex list-outside list-none items-center gap-4 md:visible"
+    >
       <li class="hover:underline"><a href="#about">About</a></li>
       <li class="hover:underline"><a href="#experience">Experience</a></li>
     </ul>
-
-    <ul class="flex list-none items-center gap-3">
-      <li>
-        <a href={externalLinks.linkedin}>
-          <i data-lucide="linkedin" aria-label="LinkedIn"></i>
-        </a>
-      </li>
-
-      <li>
-        <ContactMeDialog client:idle />
-      </li>
-    </ul>
   </div>
+
+  <ul class="flex list-none items-center gap-3">
+    <li>
+      <a href={externalLinks.linkedin}>
+        <i data-lucide="linkedin" aria-label="LinkedIn"></i>
+      </a>
+    </li>
+
+    <li>
+      <ContactMeDialog client:idle />
+    </li>
+  </ul>
 </nav>
 
 <style>
