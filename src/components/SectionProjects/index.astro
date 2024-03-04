@@ -1,0 +1,138 @@
+---
+import { html } from "../../lib/utils";
+import appointmentTemplateDemoPreview from "./imgs/appointment-template-demo.webp";
+import ecommerceProductPagePreview from "./imgs/ecommerce-product-page.webp";
+
+const projects = [
+  {
+    title: "Appointment Template (Demo)",
+    workInProgress: false,
+    previewImg: appointmentTemplateDemoPreview.src,
+    description: html`<p>
+        This web page is for clients wishing to have a page that not only
+        describes the life coaching/mentorship services they provide, but also
+        allow them to book appointments through Calendly and to sign up for
+        updates and newsletters via email.
+      </p>
+
+      <p>
+        While the visual appearance and layout is custom-coded, clients are able
+        to update information and images on the website on their own through a
+        Content Management System via
+        <a
+          href="https://www.sanity.io/"
+          target="_blank"
+          rel="noopener,noreferrer"
+          class="text-cyan-800 underline"
+          >Sanity</a
+        >. Whenever the user publishes new updates, the site is rebuilt
+        automatically with the new static content.
+      </p>
+
+      <p>This web page is based off of actual work I did in the past.</p>`,
+    urls: {
+      code: "https://github.com/Mister-Corn/appointment-template-demo",
+      live: "https://appointment-template-demo.vercel.app/",
+    },
+    tags: ["React", "Next.js", "Tailwind CSS", "Sanity CMS", "shadcn-ui"],
+  },
+  {
+    title: "Ecommerce Product Page",
+    workInProgress: true,
+    previewImg: ecommerceProductPagePreview.src,
+    description: html`<p>
+        A challenge from
+        <a
+          href="https://frontendmentor.io"
+          target="_blank"
+          rel="noopener,noreferrer"
+          class="text-cyan-800 underline"
+          >FrontEnd Mentor</a
+        >, which calls for a responsive e-commerce product page with cart
+        functionality. I&apos;ve worked on this using React, Tailwind, and with
+        <a
+          href="https://www.radix-ui.com/primitives"
+          target="_blank"
+          rel="noopener,noreferrer"
+          class="text-cyan-800 underline"
+          >Radix UI Primitives</a
+        >, accessible React components that nearly work out-of-the-box but are
+        unstyled to allow easy customization.
+      </p>
+
+      <p>
+        This is a work in progress. The next steps are: the mobile menu modal,
+        spacing adjustments, and README update
+      </p>`,
+    urls: {
+      code: "https://github.com/Mister-Corn/ecommerce-product-page-react",
+      live: "https://ecommerce-product-page-react.vercel.app/",
+    },
+  },
+] as const;
+---
+
+<!-- Projects Section -->
+<section id="projects" class="bg-gradient-to-b from-cyan-200 to-blue-300">
+  <div class="container grid gap-8 p-12">
+    <h2
+      class="cst-border inline-block w-min bg-white px-4 py-2 font-audiowide text-2xl text-cyan-900"
+    >
+      Projects
+    </h2>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      {
+        projects.map(
+          ({ title, workInProgress, previewImg, description, urls }) => (
+            <div class="grid gap-4 rounded bg-cyan-50 p-4 shadow">
+              <div>
+                <h3 class="text-lg font-bold">{title}</h3>
+
+                {workInProgress && (
+                  <span class="mt-1 inline-block w-max rounded bg-cyan-950 px-2 text-sm font-bold text-white">
+                    Work in Progress
+                  </span>
+                )}
+
+                <img
+                  src={previewImg}
+                  alt=""
+                  class="width-full mt-2 aspect-video"
+                />
+              </div>
+
+              <Fragment set:html={description} />
+
+              <div class="flex gap-4">
+                <a href={urls.code} target="_blank" rel="noopener,noreferrer">
+                  <i
+                    data-lucide="github"
+                    aria-label="GitHub"
+                    role="link"
+                    class="h-6 w-6 text-cyan-950"
+                  />
+                </a>
+
+                <a href={urls.live} target="_blank" rel="noopener,noreferrer">
+                  <i
+                    data-lucide="globe"
+                    aria-label="Live website"
+                    role="link"
+                    class="h-6 w-6 text-cyan-950"
+                  />
+                </a>
+              </div>
+            </div>
+          ),
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .cst-border {
+    box-shadow: 6px 6px rgb(var(--clr-pastel-green) / 0.75);
+  }
+</style>
