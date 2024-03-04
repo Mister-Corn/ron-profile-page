@@ -83,7 +83,11 @@ export function ContactMeDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Mail className="cursor-pointer" />
+        <Mail
+          className="cursor-pointer"
+          role="button"
+          aria-label="Contact Ronald"
+        />
       </DialogTrigger>
       <DialogPortal>
         <DialogOverlay />
