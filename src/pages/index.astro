@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Header from "../components/Header.astro";
 import SectionAbout from "../components/SectionAbout.astro";
+import SectionProjects from "../components/SectionProjects/index.astro";
 import { ContactMeDialog } from "@/components/ContactMeDialog";
 import { externalLinks } from "@/links";
 ---
@@ -29,6 +30,8 @@ import { externalLinks } from "@/links";
          to get the same info, but it&apos;s way more boring! 😴🛌
       </p>
     </section>
+
+    <SectionProjects />
 
     <!-- Experience Section -->
     <section id="experience">
